@@ -3,6 +3,7 @@ import { Images } from '@strapi/icons';
 import pluginPkg from '../../package.json';
 
 import { MediaLibraryDialog } from './components/MediaLibraryDialog/MediaLibraryDialog';
+import { AssetDialog } from './components/AssetDialog/AssetDialog';
 import { MediaLibraryInput } from './components/MediaLibraryInput/MediaLibraryInput';
 import { PERMISSIONS } from './constants';
 import { pluginId } from './pluginId';
@@ -53,6 +54,14 @@ const admin: Plugin.Config.AdminInput = {
         Component: MediaLibraryDialog as React.FC<Partial<MediaLibraryDialogProps>>,
       },
     ]);
+    app.addComponents([
+      {
+        name: 'asset-dialog',
+        Component: AssetDialog as React.FC<Partial<AssetDialog>>,
+      },
+    ]);
+
+    
 
     app.registerPlugin({
       id: pluginId,
